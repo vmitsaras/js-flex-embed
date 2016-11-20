@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flex-Embed jQuery Plugin</title>
+    <link rel="publisher" href="https://plus.google.com/u/0/102875256234651427686/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Flex-Embed jQuery Plugin">
+    <meta property="og:description" content="A jQuery Plugin for responsive intrinsic ratio embeds.">
+    <meta name="twitter:site" content="@vmitsaras">
+    <meta name="twitter:creator" content="@vmitsaras">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto+Mono|Roboto:400,500" rel="stylesheet">	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+	<link rel="stylesheet" href="../dist/_css/js-flex-embed.css">
+	<link rel="stylesheet" href="../node_modules/xrayhtml/dist/xrayhtml.css">
+	<link rel="stylesheet" href="../node_modules/xrayhtml/libs/prism.css">
+	<link rel="stylesheet" href="demo.css">
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="../vendor/modernizr.js"></script>
+	<script src="../node_modules/xrayhtml/dist/xrayhtml.js"></script>
+	<script src="../node_modules/xrayhtml/libs/prism.min.js"></script>
+	<script src="../node_modules/fg-ajax-include/src/ajaxInclude.js"></script>
+	<script src="../bower_components/respimage/respimage.min.js"></script>
+	<script src="../bower_components/lazysizes/lazysizes.min.js"></script>
+
+	<script src="../dist/_js/js-flex-embed.js"></script>
+
+	<script type="text/javascript">
+		window.lazySizesConfig = window.lazySizesConfig || {};
+		window.lazySizesConfig.lazyClass = 'js-lazyload';
+		window.lazySizesConfig.loadingClass  = 'is-loading';
+		window.lazySizesConfig.loadedClass   = 'is-loaded';
+		window.lazySizesConfig.expand  = -20;
+		lazySizesConfig.loadMode = 1;
+
+		$( window ).on( "create.xrayhtml", function( e ) {
+			var prism = !!~e.target.getAttribute( "class" ).indexOf( "js-prism" );
+
+			if( prism && "Prism" in window ) {
+				$( ".js-prism" ).find( "code" ).addClass( "language-markup" );
+				Prism.highlightAll();
+			}
+
+			$( function(){
+				$( document ).trigger( "enhance" );
+			});
+		});
+
+		$( function(){
+			$( document ).on( "create.flex-embed", function( e ){
+				var dataFlexEmbed = $( e.target ).data('flex-embed-component');
+				console.log(dataFlexEmbed);
+			} );
+		});
+
+	</script>
+
+</head>
+<a href="https://github.com/vmitsaras/js-flex-embed/" title="Fork me on GitHub" class="c-github-corner">
+    <svg class="c-github-corner__svg" width="100" height="100" viewbox="0 0 250 250">
+        <title>Fork js-flex-embed on GitHub</title>
+        <desc>A jQuery Plugin for responsive intrinsic ratio embeds</desc>
+        <path d="M0 0h250v250"></path>
+        <path class="c-github-corner__octo-arm" d="M127.4 110c-14.6-9.2-9.4-19.5-9.4-19.5 3-7 1.5-11 1.5-11-1-6.2 3-2 3-2 4 4.7 2 11 2 11-2.2 10.4 5 14.8 9 16.2" fill="currentColor" style="transform-origin:130px 110px"></path>
+        <path d="M113.2 114.3s3.6 1.6 4.7.6l15-13.7c3-2.4 6-3 8.2-2.7-8-11.2-14-25 3-41 4.7-4.4 10.6-6.4 16.2-6.4.6-1.6 3.6-7.3 11.8-10.7 0 0 4.5 2.7 6.8 16.5 4.3 2.7 8.3 6 12 9.8 3.3 3.5 6.7 8 8.6 12.3 14 3 16.8 8 16.8 8-3.4 8-9.4 11-11.4 11 0 5.8-2.3 11-7.5 15.5-16.4 16-30 9-40 .2 0 3-1 7-5.2 11l-13.3 11c-1 1 .5 5.3.8 5z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+
+<body class="c-page language-markup">
+    <header class="c-header l-wrapper" role="banner">
+        <h1 class="c-header__title c-title">
+            <span class="c-title__js">js</span>
+            <span class="c-title__flex">FLEX</span>
+            <span class="c-title__embed">EMBED</span>
+        </h1>
+        <p class="c-header__description">A jQuery Plugin for responsive intrinsic ratio embeds</p>
+        <a class="c-button c-button--cta" href="https://github.com/vmitsaras/js-flex-embed/archive/master.zip">Download</a>
+
+
+    </header>
+
+    <main class="l-wrapper" role="main">
+        <section class="c-test">
+        <h2 class="c-test__describe">Default</h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <iframe class="js-flex-embed" width="560" height="315" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+        <h3 class="c-test__it">Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <img class="js-flex-embed" width="560px" height="315px" src="http://placehold.it/560x315/">
+        </div>
+
+        <h2 class="c-test__describe">Data <code>width height</code> Attributes</h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <iframe class="js-flex-embed" data-width="560" data-height="315" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+        <h3 class="c-test__it">Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <img class="js-flex-embed" data-width="560" data-height="315" src="http://placehold.it/560x315/">
+        </div>
+
+        <h2 class="c-test__describe">Data <code>aspect-ratio</code> Attributes</h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <iframe class="js-flex-embed" data-aspect-ratio=".5625" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+        <h3 class="c-test__it">Iframe aspect-ratio overrides height and width</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <iframe class="js-flex-embed" data-aspect-ratio=".4" width="560" height="315" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+        <h3 class="c-test__it">Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <img class="js-flex-embed" data-aspect-ratio=".3625" width="560" height="315" src="http://placehold.it/560x315/">
+        </div>
+
+        <h2 class="c-test__describe">Container</h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <div class="js-has-iframe">
+                <iframe class="js-flex-embed" data-aspect-ratio=".4" width="560" height="315" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+                <iframe class="js-flex-embed" data-aspect-ratio=".5625" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+            </div>
+        </div>
+
+
+        <h2 class="c-test__describe">CSS only</h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <!--http://caniuse.com/#search=calc-->
+            <div class="o-flex-embed">
+                <div class="o-flex-embed__ratio" style="padding-bottom: calc( 315 / 560*100%);"></div>
+                <div class="o-flex-embed__content">
+                    <iframe src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+                </div>
+            </div>
+        </div>
+        <h3 class="c-test__it">Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <div class="o-flex-embed">
+                <div class="o-flex-embed__ratio" style="padding-bottom: calc( 315 / 560*100%);"></div>
+                <div class="o-flex-embed__content">
+                    <img src="http://placehold.it/560x315/">
+                </div>
+            </div>
+        </div>
+
+        <h2 class="c-test__describe">Lazyloading <a title="lazysizes" href="https://github.com/aFarkas/lazysizes" rel="external" target="_blank">plugin</a></h2>
+        <h3 class="c-test__it">Iframe</h3>
+        <div class="c-test__run c-test__run--fade js-prism" data-xrayhtml>
+            <iframe class="js-lazyload js-flex-embed" data-aspect-ratio=".5625" data-src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+        <h3 class="c-test__it">Image</h3>
+        <div class="c-test__run c-test__run--fade js-prism" data-xrayhtml>
+            <img class="js-lazyload js-flex-embed" data-aspect-ratio=".3625" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="http://lorempixel.com/560/315/">
+        </div>
+
+
+        <h2 class="c-test__describe">Ajax <a title="Ajax Include Pattern" href="https://github.com/filamentgroup/Ajax-Include-Pattern" rel="external" target="_blank">plugin</a></h2>
+        <h3 class="c-test__it">Iframe and Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <script type="text/javascript">
+                $( function(){
+                    $( "[data-after]" ).on("ajaxInclude", function(){
+                        $( document ).trigger( "enhance" );
+                    }).ajaxInclude();
+                });
+            </script>
+
+            <div data-after="ajax.html" data-media="(min-width: 40em)"></div>
+        </div>
+
+
+        <h2 class="c-test__describe">Custom</h2>
+        <h3 class="c-test__it">Iframe and Image</h3>
+        <div class="c-test__run js-prism" data-xrayhtml>
+            <script type="text/javascript">
+                $( function(){
+
+                    $( ".js-custom" ).each(function(){
+                        new window.componentNamespace.FlexEmbed( this, {
+                            aspectRatio:".5"
+                        } ).init();
+                    });
+
+                    $( ".js-custom-img" ).each(function(){
+                        new window.componentNamespace.FlexEmbed( this, {
+                            height:"200",
+                            width:"600"
+                        } ).init();
+                    });
+
+                });
+            </script>
+
+            <img class="js-custom-img" src="http://placehold.it/600x400/">
+            <iframe class="js-custom" src="https://www.youtube.com/embed/iEEOHUMFfZE"></iframe>
+        </div>
+
+    </section>
+    </main>
+
+    <footer class="c-footer" role="contentinfo">
+        <div class="l-wrapper">
+            <div class="c-footer__btns">
+                <a class="c-button" href="https://github.com/vmitsaras/js-flex-embed/archive/master.zip">Download now</a>
+                <a class="c-button" href="https://github.com/vmitsaras/js-flex-embed/">View On Github</a>
+            </div>
+            <div class="c-footer__social">
+                <iframe title="Follow Vasileios Mitsaras on Github" src="https://ghbtns.com/github-btn.html?user=vmitsaras&amp;type=follow&amp;count=false" frameborder="0" scrolling="0" width="140px" height="20px"></iframe>
+                <iframe title="Star Accesible Offcanvas jQuery Plugin" src="https://ghbtns.com/github-btn.html?user=vmitsaras&amp;repo=js-flex-embed&amp;type=watch&amp;count=false" allowtransparency="true" frameborder="0" scrolling="0" width="106px" height="20px"></iframe>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
