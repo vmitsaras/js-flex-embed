@@ -4,6 +4,4 @@
 ### compass
 *.sass-cache*
 
-### npm bower grunt
-*node_modules*
-*bower_components*
+### npm bower grunt*node_modules**bower_components*
