@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Flex-Embed
+
+    Based on
+    https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.ratio.scss
+    and
+    https://github.com/suitcss/components-flex-embed
+   ========================================================================== */
+
+// A list of aspect ratios that get generated as modifier classes.
+
+$ratios: (
+        2:1,
+        4:3,
+        16:9,
+) !default;
+
+
+
+/**
+ * Create ratio-bound content blocks, to keep media (e.g. images, videos) in
+ * their correct aspect ratios.
+ *
+ * http://alistapart.com/article/creating-intrinsic-ratios-for-video
+ *
+ * 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
+ */
+
+.o-flex-embed {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.o-flex-embed__ratio{
+  content: "";
+  display: block;
+  width: 100%;
+  padding-bottom: 100%; /* [1] */
+}
+
+
+.o-flex-embed__content,
+.o-flex-embed__content > iframe,
+.o-flex-embed__content > embed,
+.o-flex-embed__content > object {
+  position: absolute;
+  top:    0;
+  bottom: 0;
+  left:   0;
+  height: 100%;
+  width:  100%;
+}
+
+.o-flex-embed__crop-item {
+  position: absolute;
+  left: -10000px;
+  top: -10000px;
+  bottom: -10000px;
+  right: -10000px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+
+/* Ratio variants.
+   ========================================================================== */
+
+/**
+ * Generate a series of flex-embed classes to be used like so:
+ *
+     <div class="o-flex-embed">
+      <div class="o-flex-embed__ratio o-flex-embed__ratio--16:9"></div>
+      <div class="o-flex-embed__content">
+        <!-- child content -->
+      </div>
+    </div>
+ *
+ */
+
+@each $antecedent, $consequent in $ratios {
+
+  @if (type-of($antecedent) != number) {
+    @error "`#{$antecedent}` needs to be a number."
+  }
+
+  @if (type-of($consequent) != number) {
+    @error "`#{$consequent}` needs to be a number."
+  }
+
+  .o-flex-embed__ratio--#{$antecedent}\:#{$consequent} {
+    padding-bottom: ($consequent/$antecedent) * 100%;
+  }
+
+}

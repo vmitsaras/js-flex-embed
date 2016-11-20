@@ -1,0 +1,25 @@
+{
+  "name": "js-flex-embed",
+  "version": "1.0.0",
+  "main": [
+    "dist/_js/js-flex-embed.js",
+    "dist/_css/prefixed/js-flex-embed.css"
+  ],
+  "ignore": [
+    "**/.*"
+  ],
+  "authors": [
+    "Vasileios Mitsaras"
+  ],
+  "keywords": [
+    "aspect ratios",
+    "flex embed",
+    "intrinsic ratio"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "respimage": "^1.4.2",
+    "lazysizes": "^2.0.2"
+  }
+}

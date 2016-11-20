@@ -1,0 +1,301 @@
+/* line 1, ../src/demo.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 6, ../src/demo.scss */
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* line 9, ../src/demo.scss */
+a {
+  color: #ff5252;
+  text-decoration: none;
+}
+
+/* line 14, ../src/demo.scss */
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+/* line 20, ../src/demo.scss */
+.c-test {
+  counter-reset: test-describe;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* line 27, ../src/demo.scss */
+.c-test__describe:before {
+  content: counter(test-describe);
+  counter-increment: test-describe;
+}
+
+/**
+ * The 'it' CSS counter
+ */
+/* line 36, ../src/demo.scss */
+.c-test__describe {
+  counter-reset: test-it;
+}
+
+/* line 40, ../src/demo.scss */
+.c-test__it:before {
+  content: counter(test-describe) "." counter(test-it);
+  counter-increment: test-it;
+}
+
+/**
+ * The test title
+ */
+/* line 49, ../src/demo.scss */
+.c-test__title {
+  font-size: 2em;
+  padding: 20px;
+  margin: 20px 0;
+  background: #eee;
+  color: #999;
+}
+
+/**
+ * The test description and expectation titles
+ */
+/* line 61, ../src/demo.scss */
+.c-test__describe,
+.c-test__it {
+  background: #f2f2f2;
+  border-left: 5px solid #666;
+  color: #666;
+  font-weight: 500;
+  margin: 20px 0;
+  padding: 0.75em 20px;
+}
+
+/* line 71, ../src/demo.scss */
+.c-test__describe {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/**
+ * The counter styles
+ */
+/* line 80, ../src/demo.scss */
+.c-test__describe:before,
+.c-test__it:before {
+  color: #999;
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 30px;
+  text-transform: uppercase;
+}
+
+/* line 90, ../src/demo.scss */
+.c-test .o-flex-embed {
+  background: #424242;
+}
+
+/* line 94, ../src/demo.scss */
+iframe {
+  border: 0;
+}
+
+/* line 96, ../src/demo.scss */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 98, ../src/demo.scss */
+.c-test__run--fade iframe,
+.c-test__run--fade img,
+.c-test__run--fade .is-loading {
+  opacity: .5;
+  transition: opacity 400ms;
+  background: #f7f7f7 url(loader.gif) no-repeat center;
+}
+
+/* line 106, ../src/demo.scss */
+.c-test__run--fade iframe.is-loaded,
+.c-test__run--fade img.is-loaded {
+  opacity: 1;
+}
+
+/* line 111, ../src/demo.scss */
+code[class*="language-"],
+pre[class*="language-"],
+.xrayhtml .xraytitle
+code {
+  font-weight: 400;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* line 119, ../src/demo.scss */
+code[class*="language-"], pre[class*="language-"] {
+  text-shadow: none;
+}
+
+/* line 123, ../src/demo.scss */
+html {
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 130, ../src/demo.scss */
+.l-wrapper {
+  max-width: 752px;
+  padding: 0 12px;
+  margin: 0 auto;
+}
+
+/* line 136, ../src/demo.scss */
+.c-header {
+  position: relative;
+  margin-bottom: 3em;
+}
+
+/* line 141, ../src/demo.scss */
+.c-title__js {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/* line 145, ../src/demo.scss */
+.c-header__description {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+/* line 152, ../src/demo.scss */
+h1 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+}
+
+/* line 157, ../src/demo.scss */
+.c-test__describe {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+/* line 162, ../src/demo.scss */
+.c-test__it {
+  font-size: 1em;
+  font-weight: 400;
+  border-color: #e4e4e4;
+}
+
+/* line 168, ../src/demo.scss */
+.xrayhtml .source-panel pre {
+  font-size: .875em;
+}
+
+/* line 172, ../src/demo.scss */
+.c-footer__btns {
+  margin: 1em 0 2em;
+}
+
+/* line 176, ../src/demo.scss */
+.c-button {
+  background: #4e4e4e;
+  background-image: linear-gradient(transparent, transparent 50%, rgba(0, 0, 0, 0.08));
+  border-color: #4e4e4e;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  padding: .38198em .73424em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+}
+
+/* line 200, ../src/demo.scss */
+.c-button:hover,
+.c-button:focus {
+  background: #ff5252;
+  border-color: #ff5252;
+  outline: none;
+}
+
+/* line 207, ../src/demo.scss */
+.c-button--cta {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* line 215, ../src/demo.scss */
+.c-github-corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  z-index: 10;
+}
+
+/* line 223, ../src/demo.scss */
+.c-github-corner__svg {
+  color: #ffffff;
+  fill: #111111;
+}
+
+/* line 227, ../src/demo.scss */
+.c-github-corner:hover .c-github-corner__octo-arm,
+.c-github-corner:focus .c-github-corner__octo-arm {
+  animation: octocat-wave .56s;
+}
+
+/* line 232, ../src/demo.scss */
+.c-github-corner:hover .c-github-corner__svg,
+.c-github-corner:focus .c-github-corner__svg {
+  fill: #ff5252;
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-20deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@media (max-width: 46em) {
+  /* line 244, ../src/demo.scss */
+  .c-button--cta {
+    display: none;
+  }
+}
+@media (min-width: 46.25em) {
+  /* line 248, ../src/demo.scss */
+  .c-github-corner {
+    position: fixed;
+  }
+}
+
+/*# sourceMappingURL=demo.css.map */
