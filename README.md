@@ -1,6 +1,9 @@
 # js-flex-embed 
 jQuery Plugin for responsive intrinsic ratio embeds
 
+
+[Edit on Codepen](http://codepen.io/vmitsaras/pen/MpXNbo)
+
 ##Usage
 
 ```html
